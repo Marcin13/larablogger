@@ -1,0 +1,82 @@
+// *--------- FORMS ---------*
+.form-fieldset {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    max-width: 100%;
+    margin-bottom: 15px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &.is-wide {
+        width: 500px;
+    }
+
+    &.is-full {
+        width: 100%;
+    }
+}
+
+.form-label {
+    display: inline-block;
+    min-width: 60px;
+    margin-right: 20px;
+
+    font: 14px $mainFont;
+    color: #757575;
+}
+
+.form-field,
+.form-textarea,
+.form-select {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 0 20px;
+    border: 2px $generalBorderColor solid;
+
+    font: 14px $mainFont;
+    color: #757575;
+
+    &.is-invalid {
+        border-color: #ff7c96;
+    }
+}
+
+.form-textarea {
+    height: 200px;
+    padding-top: 10px;
+
+    resize: none;
+}
+
+.form-select {
+    padding: 0;
+
+    position: relative;
+
+    select {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0 20px;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: none;
+        border: 0 !important;
+        background: #fff;
+        background-image: none;
+
+        appearance: none;
+        outline: 0;
+
+        font: 14px $mainFont;
+        color: #757575;
+
+        &::-ms-expand {
+            display: none;
+        }
+    }
+}

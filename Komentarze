@@ -1,0 +1,16 @@
+Komentarze do projektu Larablogger
+-Zaczynamy zainstalowania Laravel!!
+-Aby zainstalować wybrana wersja w wybranym katalogu
+    composer create-project laravel/laravel . "5.8.*"
+-To co zaznaczył gwiazdkami nie robić
+-Folder Larablogger musi być kompletnie pusty
+/*
+-Zaczynamy do pustego repo na Git, później go pociągniemy na Pc i na Laptopa.
+-Zrobimy ręcznie pierwszy plik "Komentarze"
+-Następie w tym Repo zainstalujemy Laravel i zrobimy lokalny commit..
+-Następnie zrobimy nowy branch
+*/
+-Zrobiliśmy statyczną stronę
+-oraz Gitignore
+
+

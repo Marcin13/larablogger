@@ -1,0 +1,41 @@
+// *--------- MESSAGE ---------*
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        z-index: 10;
+    }
+
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+.message {
+    display: none;
+    width: 700px;
+    max-width: 100%;
+    padding: 20px 30px;
+    background-color: #9ff29f;
+
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    transition: all 0.2s;
+    animation: fadeOut 0.5s forwards;
+    animation-delay: 4s;
+
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #14af13;
+
+    &.is-error {
+        background-color: #ff8799;
+
+        color: #bf213c;
+    }
+}

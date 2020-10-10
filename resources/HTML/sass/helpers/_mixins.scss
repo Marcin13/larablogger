@@ -1,0 +1,35 @@
+// *--------- MIXINS ---------*
+
+// clearfix
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    & {
+        *zoom: 1;
+    }
+}
+
+// ::selection
+@mixin selection($color, $bgcolor, $elem: "") {
+    #{$elem}::selection {
+        color: $color;
+        background-color: $bgcolor;
+    }
+}
+
+// lineartextgradient
+@mixin lineartextgradient($color1, $color2, $startPoint: left top, $endPoint: left bottom) {
+    background: -webkit-gradient(linear, $startPoint, $endPoint, from($color1), to($color2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    color: mix($color1, $color2);
+}

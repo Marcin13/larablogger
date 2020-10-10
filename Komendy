@@ -1,0 +1,8 @@
+-Instalujemy wersje Laravel 5.8 bo na takiej jest nasz kurs
+    laravel new --5.8
+    composer create-project laravel/laravel . "5.8.*"
+-Composer w katalogu którym sie znajdujemy zainstaluje nam wersje wskazana
+-Trzeba nieć na uwadze by w katalogu do którego instalujemy Laravel nic nie było nawet ukrytych plików Git.
+    podwójny shift aby szukać
+-
+Teraz nappisuje cos w komendy i probuje to cofnac..bo sa bledy
