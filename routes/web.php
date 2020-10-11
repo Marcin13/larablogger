@@ -18,3 +18,7 @@ Route::get('/post/{post}',[PostController::class, 'show'])->name('posts.single')
 Route::get('/about-me', function (){
     return view('pages.about');
 })->name('about');
+
+Auth::routes();
+Route::get('/account/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/account/register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
