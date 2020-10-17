@@ -11,17 +11,17 @@
             @csrf
             <div class="form-fieldset">
                 <label>
-                    <input class="form-field" type="email" name="email" placeholder="Your e-mail">
+                    <input class="form-field{{ $errors->has('email') ? ' is-invalid' : '' }}" type="email" name="email" placeholder="Your e-mail" value="{{ old('email') }}">
                 </label>
             </div>
             <div class="form-fieldset">
                 <label>
-                    <input class="form-field" type="text" name="name" placeholder="Your name">
+                    <input class="form-field{{ $errors->has('name') ? ' is-invalid' : '' }}" type="text" name="name" placeholder="Your name" value="{{ old('name') }}" >
                 </label>
             </div>
             <div class="form-fieldset">
                 <label>
-                    <input class="form-field" type="password" name="password" placeholder="Password">
+                    <input class="form-field{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" type="password" placeholder="Password" value="{{ old('password') }}">
                 </label>
             </div>
             <div class="form-fieldset">

@@ -7,8 +7,15 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+     // dodając  ta linked dostęp do wpisów maja tylko osoby z zweryfikowanym email
+    /*
+     public function __construct()
+       {
+           $this->middleware('verified')->only('show');
+       }
+*/
     //
-    public function index(Request $request)
+    public function index()
     {
         $posts = Post::latest('date')->paginate(3);
         return view('pages.posts', compact('posts'));

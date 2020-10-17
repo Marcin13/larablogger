@@ -10,6 +10,7 @@
     <title>@yield('title','Home') - LaraBlogger</title>
 </head>
 <body class="page-index">
+@include('partials.message')
 <div class="container">
     <header class="mainHeader">
         <div class="wrapper flex">
@@ -17,7 +18,11 @@
             <nav>
                 <ul>
                     <li><a href="{{ route('about') }}"{!! request()->routeIs('about') ? ' class="is-active"' : '' !!}>About me</a></li>
-                    <li><a href="#">Login</a></li>
+                    @auth
+                        <li><a href="#logout">Logout</a></li>
+                    @else
+                        <li><a href="{{ route('login') }}"{!! request()->routeIs('login') ? ' class="is-active"' : '' !!}>Login</a></li>
+                    @endauth
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">RSS <i class="fa fa-rss-square"></i></a></li>
                 </ul>
@@ -40,7 +45,11 @@
             <nav>
                 <ul>
                     <li><a href="{{ route('about') }}"{!! request()->routeIs('about') ? ' class="is-active"' : '' !!}>About me</a></li>
-                    <li><a href="#">Login</a></li>
+                    @auth
+                        <li><a href="#logout">Logout</a></li>
+                    @else
+                        <li><a href="{{ route('login') }}"{!! request()->routeIs('login') ? ' class="is-active"' : '' !!}>Login</a></li>
+                    @endauth
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">RSS</a></li>
                 </ul>
@@ -49,6 +58,19 @@
         </div>
     </footer>
 </div>
+@auth
+    <form id="logout-form" method="POST" action="{{ route('logout') }}">
+        @csrf
+    </form>
+
+    <script>
+        document.querySelector("a[href='#logout']").addEventListener("click", function(e) {
+            e.preventDefault();
+
+            document.querySelector("#logout-form").submit();
+        }, false);
+    </script>
+@endauth
 </body>
 </html>
 

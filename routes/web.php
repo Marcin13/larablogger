@@ -19,6 +19,9 @@ Route::get('/about-me', function (){
     return view('pages.about');
 })->name('about');
 
-Auth::routes();
+Auth::routes(['verify'=>true]);
 Route::get('/account/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/account/register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
+Route::get('/account/login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/account/login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
+Route::get('/email/verify/{id}/{hash}', [ App\Http\Controllers\Auth\VerificationController::class, 'verify'])->name('verification.verify');
