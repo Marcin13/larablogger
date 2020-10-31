@@ -5,6 +5,11 @@
     @endforeach
 </div>
 @endif
+@if(session('message-error'))
+    <div class="message is-error">
+        <p>{{ session('message-error')}}</p>
+    </div>
+@endif
 @if(session('message'))
     <div class="message">
         <p>{{ session('message')}}</p>

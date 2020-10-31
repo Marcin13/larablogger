@@ -23,8 +23,11 @@ class PostFactory extends Factory
     {
         return [
             //
+            'user_id' => rand(1,4),
             'title'=> $this->faker->sentence(5),
             'content'=>$this->faker->paragraph(15),
+            'published'=> rand(0,1),
+            'premium'=> rand(0,1),
             'date'=> now(),
             'type'=> 'text'
         ];

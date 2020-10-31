@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Illuminate\Http\Request;
+
 
 class PostController extends Controller
 {
@@ -17,7 +17,9 @@ class PostController extends Controller
     //
     public function index()
     {
-        $posts = Post::latest('date')->paginate(3);
+       // $posts = Post::latest('date')->paginate(3);
+       //$posts = Post::published()->oldest('date')->paginate(3);
+        $posts = Post::published()->latest('date')->paginate(3);
         return view('pages.posts', compact('posts'));
     }
     public function show(Post $post){

@@ -30,4 +30,14 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
         ];
     }
+    public function admin()
+    {
+        return $this->state(function () { // tu usunąłem array $attributes
+            return [
+                'name' => 'Marcin Mitruk',
+                'email' => 'marcinmitruk@hotmail.com',
+                'password' => bcrypt('test')
+            ];
+        });
+    }
 }

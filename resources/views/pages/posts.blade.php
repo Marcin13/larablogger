@@ -7,6 +7,9 @@
     <article class="post formatText">
         <div class="postContent">
             <div class="wrapper">
+                @if($post->premium)
+                    <i class="postPremium fa fa-star"></i>
+                @endif
                 <h2 class="postTitle">
                     <a href="{{ route('posts.single',$post->slug) }}">{{ $post->title }}</a>
                 </h2>
@@ -30,7 +33,7 @@
             <div class="flex flex-sb">
                 <p class="date"><i class="fa fa-clock-o"></i> {{$post->date->diffForHumans() }}</p>
                 <p>
-                    <a href="#" class="link"><i class="fa fa-edit"></i> Edytuj</a>
+                    <a href="{{ route('admin.post.edit',$post->id) }}" class="link"><i class="fa fa-edit"></i> Edytuj</a>
                 </p>
             </div>
         </div>
@@ -39,9 +42,11 @@
     <article class="post formatPhoto">
         <h2 class="postTitle">{{ $post->title }}</h2>
         <figure class="postImage">
-            <i class="postPremium fa fa-star"></i>
+            @if($post->premium)
+                <i class="postPremium fa fa-star"></i>
+            @endif
             <a href="{{ route('posts.single',$post->slug) }}">
-                <img src="{{ $post->image }}" alt="" class="mainPhoto">
+                <img src="{{ asset($post->photo) }}" alt="" class="mainPhoto">
             </a>
             <div class="cover"
                  style="">
@@ -60,7 +65,7 @@
             <div class="flex flex-sb">
                 <p class="date"><i class="fa fa-clock-o"></i> {{$post->date->diffForHumans()}}</p>
                 <p>
-                    <a href="#" class="link"><i class="fa fa-edit"></i> Edytuj</a>
+                    <a href="{{ route('admin.post.edit',$post->id) }}" class="link"><i class="fa fa-edit"></i> Edytuj</a>
                 </p>
             </div>
         </div>

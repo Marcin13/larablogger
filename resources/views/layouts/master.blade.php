@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSRF Token zapożyczony od app.blade -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="none" onload="this.media='all'">
     <link rel="stylesheet" href="/css/main.css">
-    <title>@yield('title','Home') - LaraBlogger</title>
+    <title>@yield('title','Home') - {{ config('app.name') }}</title>
 </head>
 <body class="page-index">
 @include('partials.message')
@@ -23,6 +25,9 @@
                     @else
                         <li><a href="{{ route('login') }}"{!! request()->routeIs('login') ? ' class="is-active"' : '' !!}>Login</a></li>
                     @endauth
+                    @can('manage-posts')
+                    <li><a href="{{ route('admin.post.create') }}"{!! request()->routeIs('admin.post.create') ? ' class="is-active"' : '' !!}>Create</a></li>
+                    @endcan
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">RSS <i class="fa fa-rss-square"></i></a></li>
                 </ul>
