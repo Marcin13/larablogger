@@ -87,6 +87,10 @@ return [
         'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
+     /*Sami dodajemy właściwości admin aby później sie do nich odwołać w UserRegistered.php*/
+    'admin' => [
+        'address' => env('MAIL_ADMIN_ADDRESS')
+    ],
 
     /*
     |--------------------------------------------------------------------------

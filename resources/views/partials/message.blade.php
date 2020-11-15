@@ -1,3 +1,12 @@
+@if($errors->has('content'))
+    {{--Potrzeba czegos co przeniesie mnie do formularza--}}
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var divLoc = $('#scroll-to').offset();
+            $('html, body').animate({scrollTop: divLoc.top}, "slow");
+        });
+    </script>
+@endif
 @if( $errors->count())
 <div class="message is-error">
     @foreach($errors->all() as $error)

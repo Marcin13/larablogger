@@ -38,7 +38,7 @@
                 <div class="form-fieldset">
                     <label class="form-label">Tags:</label>
                     <label>
-                        <input class="form-field{{-- $errors->has('tags') ? ' is-invalid' : '' }}" type="text" name="tags" value="{{ $post->tags->implode('name', ' ') --}}">
+                        <input class="form-field{{ $errors->has('tags') ? ' is-invalid' : '' }}" type="text" name="tags" value="{{ $post->tags->implode('name', ' ') }}">
                     </label>
                 </div>
                 <div class="form-fieldset">
@@ -63,6 +63,9 @@
                 </div>
                 <button class="button">Update</button>
             </form>
+            <div class="">
+            <a href="{{ route('admin.post.edit', $post->id+1) }}"{!! request()->routeIs('about') ? ' class="is-active"' : '' !!}>Next post</a>
+            </div>
             <div class="rte mt">
                 <h1>Delete post</h1>
             </div>
@@ -75,8 +78,7 @@
         </div>
     </div>
 @endsection
-{{--
+
 @section('footer_scripts')
     <script src="{{ mix('/js/main.js') }}"></script>
 @endsection
---}}

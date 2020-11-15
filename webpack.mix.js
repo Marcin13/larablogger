@@ -11,7 +11,17 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+mix.disableNotifications();  // aby nie wyświetlało rożnych powiadomień 'mało istotne'
+
+mix.browserSync({             // browserSync narzędzie do automatycznego przeładowywania strony scroll
+    port: 3002,
+    proxy: "larablogger.test",
+    open: false,             // nie otwierać w domyślnej przeglądarce
+    notify: false,           // nie wysyłaj powiadomień o zmianie pliku
+});
+
+if (!mix.inProduction()) {
+    mix.webpackConfig({ devtool: "inline-source-map" }).sourceMaps();
+}
+mix.js("resources/js/main.js", "public/js").version();
+mix.sass("resources/sass/main.scss", "public/css").version();

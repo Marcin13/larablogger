@@ -19,7 +19,10 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, ...$guards)
     {
         $guards = empty($guards) ? [null] : $guards;
-
+         /*Własny wykop z stackoverflow*/
+        if(session()->get("url.intended")){
+            session()->put("redirect_after_email_verification", session()->get("url.intended"));
+        }
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
                 return redirect(RouteServiceProvider::HOME);

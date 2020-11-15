@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
 
 /**
  * @method static findOrFail ($id)         // to wszystko sam dodaje
@@ -16,7 +18,7 @@ use Illuminate\Support\Str;
  * @property mixed content               // Właściwości ta pochodzi z  scopePublished gdzie chcemy wyświetlać tylko opublikowane posty
  */
 
-class Post extends Model
+class Post extends Model implements Feedable
 {
     use HasFactory;
     /**
@@ -80,5 +82,28 @@ class Post extends Model
     public function comments(){
         return $this->hasMany(Comment::class);
     }
+    public function tags()
+    {
+        //Można dodać dodatkowe parametry ale że zastosowaliśmy konwencje nazewniczą gdzie
+        //tabele nazwaliśmy post_tag
+        return $this->belongsToMany(Tag::class);
+    }
 
+    public function toFeedItem(): FeedItem
+    {
+        // TODO: Implement toFeedItem() method.
+        return FeedItem::create()
+            ->id($this->id)
+            ->title($this->title)
+            ->summary($this->excerpt)
+            ->updated($this->updated_at)
+            ->link(route('posts.single', $this->slug))
+            ->author($this->author->name);
+    }
+    // app/NewsItem.php
+
+    public static function getFeedItems()
+    {
+        return Post::published()->get();
+    }
 }

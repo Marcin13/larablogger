@@ -1,0 +1,33 @@
+// *--------- MODULES ---------*
+%clearfix {
+    @include clearfix;
+}
+
+%transitionAll {
+    transition: all 0.2s;
+}
+
+// *--------- STYLES ---------*
+body {
+    overflow-x: hidden;
+    background-color: $generalBgColor;
+
+    font-family: $mainFont;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+.wrapper {
+    position: relative;
+    width: 980px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    @extend %clearfix;
+}

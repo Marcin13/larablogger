@@ -1,0 +1,25 @@
+// *--------- BUTTONS ---------*
+.button {
+    display: inline-block;
+    padding: 10px 30px;
+    border: none;
+    background: #00559d;
+
+    transition: all 0.2s;
+    cursor: pointer;
+
+    font: 14px $mainFont;
+    color: #fff;
+
+    &:hover {
+        background: lighten(#00559d, 10);
+    }
+
+    &--danger {
+        background: #ff7c96;
+
+        &:hover {
+            background: #ff3b62;
+        }
+    }
+}

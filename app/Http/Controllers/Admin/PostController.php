@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Services\TagsParsingService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -70,12 +71,12 @@ class PostController extends Controller
         $data['user_id'] = $request->user()->id;
 
         $post = Post::create($data);
-        /*
+
         if (isset($data['tags'])) {
             $tags = TagsParsingService::parse($data['tags']);
             $post->tags()->sync($tags);
         }
-        */
+
         session()->flash('message', 'Post has been added!');
 
         return redirect(route('posts.single', $post->slug));
@@ -125,12 +126,12 @@ class PostController extends Controller
         }
 
         $post->update($data);
-      /*
+
         if (isset($data['tags'])) {
             $tags = TagsParsingService::parse($data['tags']);
             $post->tags()->sync($tags);
         }
-    */
+
         if (isset($data['image'])) {
             Storage::delete($oldImage);
         }
