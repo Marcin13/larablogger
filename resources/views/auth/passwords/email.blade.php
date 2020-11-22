@@ -5,6 +5,7 @@
     <div class="wrapper">
         <div class="rte">
             <h1>Reset password</h1>
+            <p>Lost your password? Please enter your email address. You will receive a link to create a new password via email.</p>
         </div>
 
         <form method="POST" action="{{ route('password.email') }}">

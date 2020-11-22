@@ -4,7 +4,7 @@
 @section('content')
 <div class="wrapper">
     <div class="rte">
-        <h1>Contact</h1>
+        <h1>Send Us A Message</h1>
     </div>
 
     <form method="POST" action="{{ route('contact') }}">

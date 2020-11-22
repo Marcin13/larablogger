@@ -28,8 +28,7 @@
                 <div class="flex flex-sb">
                     <p class="date"><i class="fa fa-clock-o"></i> {{ $post->date->diffForHumans() }}</p>
                     <p>
-                        <a href="{{ route('admin.post.edit',$post->id) }}" class="link"><i class="fa fa-edit"></i>
-                            Edytuj</a>
+                        <a href="{{ route('admin.post.edit',$post->id) }}" class="link"><i class="fa fa-edit"></i>Edytuj</a>
                     </p>
                 </div>
             </div>
@@ -37,6 +36,7 @@
         </article>
     @elseif($post->type === 'photo')
         <article class="post formatPhoto">
+            <h2 class="PhotoPostTitle" >{{ $post->title }}</h2>
             <figure class="postImage">
                 @if($post->premium)
                     <i class="postPremium fa fa-star"></i>
@@ -44,7 +44,12 @@
                 <img src={{ asset($post->photo) }} alt="" class="mainPhoto" alt="">
                 <div class="cover"
                      style="background: url({{ $post->photo }}) no-repeat;">
-                </div>
+                </div><div class="wrapper content">
+                        <div class="readMore">{!! $post->content !!}
+
+                        </div>
+                    </div>
+
             </figure>
             <div class="meta">
                 @if($post->tags->count() > 0)
@@ -57,12 +62,13 @@
                         @endforeach
                     </ul>
                 @endif
-                <div class="flex flex-sb">
-                    <p class="date"><i class="fa fa-clock-o"></i> {{ $post->date->diffForHumans() }}</p>
-                    <p>
-                        <a href="{{ route('admin.post.edit',$post->id) }}" class="link"><i class="fa fa-edit"></i>Edytuj</a>
-                    </p>
-                </div>
+                    <div class="flex flex-sb">
+                        <p class="date"><i class="fa fa-clock-o"></i> {{$post->date->diffForHumans() }} <i class="fa fa-user"></i>
+                            by  <a href="{{route('user.profile', $post->author->name)}}">{{ $post->author->name }}</a> </p>
+                        <p><p>
+                            <a href="{{ route('admin.post.edit',$post->id) }}" class="link"><i class="fa fa-edit"></i> Edytuj</a>
+                        </p>
+                    </div>
             </div>
             @include('partials.post.pagination');
         </article>

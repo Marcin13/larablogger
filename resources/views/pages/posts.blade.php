@@ -43,7 +43,7 @@
     </article>
             @elseif($post->type == 'photo')
     <article class="post formatPhoto">
-        <h2 class="postTitle">{{ $post->title }}</h2>
+        <h2 class="PhotoPostTitle" ><a href="{{ route('posts.single',$post->slug) }}">{{ $post->title }}</a></h2>
         <figure class="postImage">
             @if($post->premium)
                 <i class="postPremium fa fa-star"></i>
@@ -51,9 +51,13 @@
             <a href="{{ route('posts.single',$post->slug) }}">
                 <img src="{{ asset($post->photo) }}" alt="" class="mainPhoto">
             </a>
-            <div class="cover"
-                 style="">
-            </div>
+                <div class="wrapper content">
+                <div class="readMore">{{$post->Excerpt}}
+                    <p class="readMore">
+                        <a href="{{ route('posts.single',$post->slug) }}">Keep reading</a>
+                    </p>
+                </div>
+                </div>
         </figure>
         <div class="meta">
             @if($post->tags->count() > 0)

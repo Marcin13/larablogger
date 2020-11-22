@@ -18,8 +18,9 @@ class SearchController extends Controller
         );
         return Validator::make($data, [
             'q' => ['required', 'min:3', 'max:255'],
+            //'q' => ['nullable','min:3', 'max:255'],
         ],
-            $messages
+           $messages // musi tu byc by wyświetlać komunikaty
         )->validate();
     }
 
@@ -30,8 +31,9 @@ class SearchController extends Controller
         //dd($q);
         $posts = Post::published()
             ->where('title', 'like', "%$q%")
+            ->latest('id')
             ->paginate(3);
-
+        $posts->appends(['q' => $q]); // dodaje search do paginacji!!!
         return view('pages.posts', compact('posts'));
     }
 }

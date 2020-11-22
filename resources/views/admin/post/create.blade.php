@@ -36,7 +36,7 @@
                 <div class="form-fieldset">
                     <label class="form-label">Tags:</label>
                     <label>
-                        <input class="form-field" type="text" name="tags">
+                        <input class="form-field" type="text" name="tags" value="{{ old('tags') }}">
                     </label>
                 </div>
                 <div class="form-fieldset">
@@ -52,8 +52,8 @@
                     </label>
                 </div>
                 <div class="form-fieldset">
-                    <label class="form-label">Image:</label>
-                    <input type="file" name="image">
+                    <label class="form-label {{ $errors->has('image') ? ' is-invalid' : '' }}">Image:</label>
+                    <input type="file" name="image" value="{{ old('image') }}">
                 </div>
                 <div class="form-fieldset is-full">
                     <label for="wysiwyg"></label><textarea id="wysiwyg" class="form-textarea" name="content" placeholder="Content">{{ old('content') }}</textarea>

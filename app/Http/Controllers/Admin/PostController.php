@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 
+
 class PostController extends Controller
 {
     public function __construct()
@@ -24,14 +25,17 @@ class PostController extends Controller
         $this->middleware('auth'); // użytkownik mysi być zalogowany
         $this->middleware('can:manage-posts'); // podpowiada ślicznie to co zdefiniowaliśmy w AuthServiceProvider.php
     }
+
     protected function validator($data)
     {
+        //$id = isset($data['id']) ? ','.$data['id'].',id':'';
         $validated = Validator::make($data, [
-            'title' => 'required|max:255',
+            //'title' => 'required|max:255|unique:posts,title',
+            'title' => "required|unique:posts,title,{$data['id']}", //do edycji posta
             'type' => 'required|in:text,photo',
             'date' => 'nullable|date',
             'tags' => 'nullable',
-            'image' => 'nullable|image|max:1024',
+            'image' => 'nullable|max:995|image',
             'content' => 'nullable',
             'published' => 'boolean',
             'premium' => 'boolean'
@@ -61,8 +65,8 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $request['id'] = ''; //do edycji posta
         $data = $this->validator($request->all());
-
         if (isset($data['image'])) {
             $path = $request->file('image')->store('photos');
             $data['image'] = $path;
@@ -101,7 +105,6 @@ class PostController extends Controller
      */
     public function edit(int $id)
     {
-        //
         $post = Post::findOrfail($id);
         return  view('admin.post.edit',compact('post'));
     }
@@ -117,6 +120,7 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
         $oldImage = $post->image;
+        $request['id'] = $post->id; //do edycji posta
 
         $data = $this->validator($request->all());
 
@@ -132,11 +136,14 @@ class PostController extends Controller
             $post->tags()->sync($tags);
         }
 
-        if (isset($data['image'])) {
-            Storage::delete($oldImage);
+        if (isset($data['image']) AND isset($oldImage)) {
+            Storage::move($oldImage, "delete/$oldImage");
+           // Storage::delete($oldImage);
         }
 
-        return back()->with('message', 'Post has been updated!');
+        // return back()->with('message', 'Post has been updated!');
+        session()->flash('message', 'Post has been updated!');
+        return redirect(route('posts.single', $post->slug));
     }
 
     /**
@@ -150,7 +157,10 @@ class PostController extends Controller
         $post = Post::FindOrFail($id);
         $post->delete();
 
-        Storage::delete($post->image);
+       // Storage::delete($post->image);
+        if($post->image) {
+            Storage::move($post->image, "delete/$post->image");
+        }
         return redirect('/')->with('message','Post has been deleted!');
     }
 }

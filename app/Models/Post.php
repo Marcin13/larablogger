@@ -15,6 +15,7 @@ use Spatie\Feed\FeedItem;
  * @method static Create(array $all)      // w dokumentacji Laravel
  * @method static oldest(string $string)
  * @method static published()            //metoda ta pochodzi z naszego
+ * @method static firstOrFail(int $id)
  * @property mixed content               // Właściwości ta pochodzi z  scopePublished gdzie chcemy wyświetlać tylko opublikowane posty
  */
 
@@ -105,5 +106,17 @@ class Post extends Model implements Feedable
     public static function getFeedItems()
     {
         return Post::published()->get();
+    }
+    /*StackOverflow nex and previous */
+    // in your model file
+    public function next(){
+        // get next post //firstOrFaill will generate 404
+        return Post::published()->where('id', '>', $this->id)->first();
+
+    }
+    public  function previous(){
+        // get previous  post // Tu musi być tak bo inaczej nie dziala
+        return Post::published()->where('id', '<', $this->id)->orderBy('id','desc')->first();
+
     }
 }
