@@ -35,9 +35,9 @@
            {{--     <p class="date"><i class="fa fa-clock-o"></i> {{$post->date->diffForHumans() }} <i class="fa fa-user"></i> by {{ $post->author->name }} </p> --}}
                 <p class="date"><i class="fa fa-clock-o"></i> {{$post->date->diffForHumans() }} <i class="fa fa-user"></i>
                     by <a href="{{route('user.profile', $post->author->name)}}">{{ $post->author->name }}</a> </p>
-                <p>
-                    <a href="{{ route('admin.post.edit',$post->id) }}" class="link"><i class="fa fa-edit"></i> Edytuj</a>
-                </p>
+                @can('manage-posts')
+                <p><a href="{{ route('admin.post.edit',$post->id) }}" class="link"><i class="fa fa-edit"></i> Edytuj</a></p>
+                @endcan
             </div>
         </div>
     </article>
@@ -51,15 +51,16 @@
             <a href="{{ route('posts.single',$post->slug) }}">
                 <img src="{{ asset($post->photo) }}" alt="" class="mainPhoto">
             </a>
-                <div class="wrapper content">
-                <div class="readMore">{{$post->Excerpt}}
-                    <p class="readMore">
+
+        </figure>
+        <div class="meta">
+            <div class="content">{{$post->Excerpt}}</div>
+            <div class="readMore">
+            <p>
                         <a href="{{ route('posts.single',$post->slug) }}">Keep reading</a>
                     </p>
                 </div>
-                </div>
-        </figure>
-        <div class="meta">
+
             @if($post->tags->count() > 0)
                 <ul class="tags">
                     <li><i class="fa fa-tags"></i></li>
@@ -74,9 +75,9 @@
                 <p class="date"><i class="fa fa-clock-o"></i> {{$post->date->diffForHumans() }} <i class="fa fa-user"></i>
                     by  <a href="{{route('user.profile', $post->author->name)}}">{{ $post->author->name }}</a> </p>
                 <p>
-                <p>
-                    <a href="{{ route('admin.post.edit',$post->id) }}" class="link"><i class="fa fa-edit"></i> Edytuj</a>
-                </p>
+                @can('manage-posts')
+                    <p><a href="{{ route('admin.post.edit',$post->id) }}" class="link"><i class="fa fa-edit"></i> Edytuj</a></p>
+                @endcan
             </div>
         </div>
     </article>

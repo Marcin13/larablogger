@@ -27,9 +27,9 @@
                 @endif
                 <div class="flex flex-sb">
                     <p class="date"><i class="fa fa-clock-o"></i> {{ $post->date->diffForHumans() }}</p>
-                    <p>
-                        <a href="{{ route('admin.post.edit',$post->id) }}" class="link"><i class="fa fa-edit"></i>Edytuj</a>
-                    </p>
+                    @can('manage-posts')
+                        <p><a href="{{ route('admin.post.edit',$post->id) }}" class="link"><i class="fa fa-edit"></i> Edytuj</a></p>
+                    @endcan
                 </div>
             </div>
             @include('partials.post.pagination');
@@ -44,9 +44,9 @@
                 <img src={{ asset($post->photo) }} alt="" class="mainPhoto" alt="">
                 <div class="cover"
                      style="background: url({{ $post->photo }}) no-repeat;">
-                </div><div class="wrapper content">
+                </div>
+                    <div class="wrapper content">
                         <div class="readMore">{!! $post->content !!}
-
                         </div>
                     </div>
 
@@ -65,9 +65,9 @@
                     <div class="flex flex-sb">
                         <p class="date"><i class="fa fa-clock-o"></i> {{$post->date->diffForHumans() }} <i class="fa fa-user"></i>
                             by  <a href="{{route('user.profile', $post->author->name)}}">{{ $post->author->name }}</a> </p>
-                        <p><p>
-                            <a href="{{ route('admin.post.edit',$post->id) }}" class="link"><i class="fa fa-edit"></i> Edytuj</a>
-                        </p>
+                        @can('manage-posts')
+                            <p><a href="{{ route('admin.post.edit',$post->id) }}" class="link"><i class="fa fa-edit"></i> Edytuj</a></p>
+                        @endcan
                     </div>
             </div>
             @include('partials.post.pagination');

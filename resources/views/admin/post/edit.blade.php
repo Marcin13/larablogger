@@ -63,9 +63,9 @@
                 </div>
                 <button class="button">Update</button>
             </form>
-            <div class="">
+          {{-- <div class="">
             <a href="{{ route('admin.post.edit', $post->id+1) }}"{!! request()->routeIs('about') ? ' class="is-active"' : '' !!}>Next post</a>
-            </div>
+            </div>--}}
             <div class="rte mt">
                 <h1>Delete post</h1>
             </div>

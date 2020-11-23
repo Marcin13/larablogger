@@ -186,7 +186,7 @@
         padding: 0 10px;
         font: 700 11px/18px $mainFont;
         text-transform: uppercase;
-        color: $generalDarkTextColor;
+        color: $generalActiveLinkColor;
 
         &:hover {
             color: $generalLinkColor;
@@ -196,7 +196,6 @@
             font: 700 11px/18px $mainFont;
         }
     }
-
     .paginationPrev {
         float: left;
         padding: 0 !important;
@@ -209,5 +208,20 @@
 
     .fa {
         font-size: 12px;
+    }
+}
+
+.formatPhoto .pagination a {
+    padding: 0 10px;
+    font: 700 11px/18px $mainFont;
+    text-transform: uppercase;
+    color: $generalActiveLinkColor;
+
+    &:hover {
+        color: $generalLinkColor;
+    }
+
+    .page-permalink & {
+        font: 700 11px/18px $mainFont;
     }
 }

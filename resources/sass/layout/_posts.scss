@@ -15,6 +15,7 @@
 
         .tags {
             margin-bottom: 30px;
+            margin-top: 30px;
 
             li {
                 margin-left: 7px;
@@ -101,6 +102,11 @@
         width: 1140px;
         margin: 0 auto;
     }
+    .content .readMore{
+        color: #ffffff;
+        padding-bottom: 20px;
+    ;
+    }
 
     figure {
         width: 1280px;
@@ -131,9 +137,12 @@
         padding-top: 25px;
 
         color: #fff;
-        text-align: center;
+        text-align: left;
 
         z-index: 1;
+    }
+    .content{
+        font: 400 15px/24px $mainFont;
     }
 
     .mainPhoto {
@@ -158,6 +167,20 @@
 
         filter: blur(9px);
     }
+    .pagination a {
+        padding: 0 10px;
+        font: 700 11px/18px $mainFont;
+        text-transform: uppercase;
+        color: #ffffff;
+
+        &:hover {
+            color: $generalLinkColor;
+        }
+
+        .page-permalink & {
+            font: 700 11px/18px $mainFont;
+        }
+    }
 }
 
 .postPremium {
@@ -180,6 +203,7 @@
 
     font: 500 14px/18px $mainFont;
     color: #b9b9b9;
+    text-align: left;
 
     a {
         color: inherit;
