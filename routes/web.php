@@ -3,6 +3,8 @@
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Jorenvh\Share\Share;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -72,3 +74,4 @@ Route::post('/comment/create', [App\Http\Controllers\CommentController::class, '
 
 /*Wyświetlania postów po tagach*/
 Route::get('/tag/{slug}',[App\Http\Controllers\TagController::class,'index'])->name('posts.tags');
+

@@ -34,7 +34,15 @@
             <div class="flex flex-sb">
            {{--     <p class="date"><i class="fa fa-clock-o"></i> {{$post->date->diffForHumans() }} <i class="fa fa-user"></i> by {{ $post->author->name }} </p> --}}
                 <p class="date"><i class="fa fa-clock-o"></i> {{$post->date->diffForHumans() }} <i class="fa fa-user"></i>
-                    by <a href="{{route('user.profile', $post->author->name)}}">{{ $post->author->name }}</a> </p>
+                    by <a href="{{route('user.profile', $post->author->name)}}">{{ $post->author->name }}</a>
+                </p>
+                <p>
+                    {!! Share::page( route('posts.single',$post->slug), 'Share title',['class' => 'my clas', 'id' => 'my-id', 'title' => 'Share'], '<ul class="my class" style="display: inline-flex;">', '</ul>' )
+		              ->facebook()
+		              ->twitter()
+		              ->linkedin( 'Extra linkedin summary can be passed here' ) !!}
+                </p>
+
                 @can('manage-posts')
                 <p><a href="{{ route('admin.post.edit',$post->id) }}" class="link"><i class="fa fa-edit"></i> Edytuj</a></p>
                 @endcan

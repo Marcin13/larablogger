@@ -10,6 +10,10 @@
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="none" onload="this.media='all'">
    <!-- <link rel="stylesheet" href="/css/main.css"> -->
+    <!--for social media -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="{{ asset('js/share.js') }}"></script>
+    <!--for social media -->
     <link rel="stylesheet" href="{{ mix('/css/main.css')}}">
     <title>@yield('title','Home') - {{ config('app.name') }}</title>
 </head>
