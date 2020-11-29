@@ -52,6 +52,10 @@ return [
     |
     |
     */
-
+     /*Hire we can choose Html Template
+     4 fontAwesome version 4
+     5 fontAwesome version 5
+     6 my custom Html template
+       */
     'fontAwesomeVersion' => 4,
 ];

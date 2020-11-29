@@ -1,7 +1,8 @@
 <?php
 
 return [
-    'facebook' => '<li><a href=":url" class="btn-social :class" id=":id" title=":title"><span class="fab fa-facebook-square"></span></a></li>',
+   // 'facebook' => '<li><a href=":url" class="social-button  :class" id=":id" title=":title"><span class="fab fa-facebook-square"></span></a></li>',
+    'facebook' => '<li><a href=":url" class="btn btn-sm btn-social btn-fb :class" id=":id" title=":title"><span class="fab fa-facebook-square">Share</span></a></li>',
     'twitter' => '<li><a href=":url" class="btn-social :class" id=":id" title=":title"><span class="fab fa-twitter"></span></a></li>',
     'linkedin' => '<li><a href=":url" class="btn-social :class" id=":id" title=":title"><span class="fab fa-linkedin"></span></a></li>',
     'whatsapp' => '<li><a target="_blank" href=":url" class="btn-social :class" id=":id" title=":title"><span class="fab fa-whatsapp"></span></a></li>',
