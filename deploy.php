@@ -31,7 +31,7 @@ set('repository', '/opt/git/larablogger.git');
 set('git_tty', true);
 
 // Laravel writable dirs
-set('writable_dirs', 'chown', [    ##dodałem chown
+set('writable_dirs', [    ##dodałem chown
     'bootstrap/cache',
     'storage',
     'storage/app',

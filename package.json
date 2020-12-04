@@ -25,5 +25,6 @@
     },
     "dependencies": {
         "trumbowyg": "^2.21.0"
+
     }
 }
