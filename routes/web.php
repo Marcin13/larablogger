@@ -47,7 +47,7 @@ Route::get('/about-me', function () {
 Route::get('/account/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/account/register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
 Route::get('/account/login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/account/login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
+Route::post('/account/login', [App\Http\Controllers\Auth\LoginController::class, 'login']);      ##->name('login');
 Route::post('/account/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
 /*User verification*/
@@ -64,9 +64,9 @@ Route::post('/password/reset', [App\Http\Controllers\Auth\ResetPasswordControlle
 
 /*Panel Admina CRUD dla Postów*/
 Route::get('admin/post/create', [App\Http\Controllers\Admin\PostController::class, 'create'])->name('admin.post.create');
-Route::post('admin/post/create', [App\Http\Controllers\Admin\PostController::class, 'store'])->name('admin.post.create'); /*Taka sama nazwa */
+Route::post('admin/post/create', [App\Http\Controllers\Admin\PostController::class, 'store']);     ##->name('admin.post.create'); /*Taka sama nazwa */
 Route::get('admin/post/edit/{id}', [App\Http\Controllers\Admin\PostController::class, 'edit'])->name('admin.post.edit');
-Route::put('admin/post/edit/{id}', [App\Http\Controllers\Admin\PostController::class, 'update'])->name('admin.post.edit');/*Nazwa taka sama i jeszcze z argumentem w route w post.blade.php*/
+Route::put('admin/post/edit/{id}', [App\Http\Controllers\Admin\PostController::class, 'update']); ##->name('admin.post.edit');/*Nazwa taka sama i jeszcze z argumentem w route w post.blade.php*/
 Route::delete('admin/post/edit/{id}', [App\Http\Controllers\Admin\PostController::class, 'destroy'])->name('admin.post.delete');
 
 /*Jedna droga do Controller dla dodawania komentarzy do postów*/
