@@ -12970,8 +12970,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\marcin\Sites\larablogger\resources\js\main.js */"./resources/js/main.js");
-module.exports = __webpack_require__(/*! C:\Users\marcin\Sites\larablogger\resources\sass\main.scss */"./resources/sass/main.scss");
+__webpack_require__(/*! /home/vagrant/code/resources/js/main.js */"./resources/js/main.js");
+module.exports = __webpack_require__(/*! /home/vagrant/code/resources/sass/main.scss */"./resources/sass/main.scss");
 
 
 /***/ })
