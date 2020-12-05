@@ -1,6 +1,13 @@
 /* Solid Social Share Buttons */
 #social-links {
     margin: auto;
+    ul{
+        li{
+            a{
+                display: flex;
+            }
+        }
+    }
 }
 ol, ul {
     display: flex;
