@@ -47,15 +47,32 @@
     .message {
         width: 90%;
     }
+    .mainHeader{
+        padding: 20px 0;
+        .wrapper.flex{
+            flex-direction: column;
+            align-items: center;
+        }
+        nav{
+            margin: 0 auto;
+            width: 100%;
+            ul{
+                justify-content: center;
+            }
+        }
+        form{
+            width: 100%;
+            .form-fieldset{
+                width: auto;
+                label{
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 480px) {
-    .mainHeader {
-        nav {
-            display: none;
-        }
-    }
-
     .mainFooter {
         text-align: center;
 
