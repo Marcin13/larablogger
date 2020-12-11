@@ -17,7 +17,6 @@
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.0",
-        "nesbot/carbon": "1.26.3",
         "spatie/laravel-feed": "^3.0",
         "thomaswelton/laravel-gravatar": "^1.1"
     },
