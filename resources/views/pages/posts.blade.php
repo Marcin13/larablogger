@@ -53,7 +53,7 @@
                 <i class="postPremium fa fa-star"></i>
             @endif
             <a href="{{ route('posts.single',$post->slug) }}">
-                <img src="{{ asset($post->photo) }}" alt="" class="mainPhoto">
+                <img src="{{ secure_asset($post->photo) }}" alt="" class="mainPhoto">
             </a>
 
         </figure>

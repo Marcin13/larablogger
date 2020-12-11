@@ -44,7 +44,7 @@
                 @if($post->premium)
                     <i class="postPremium fa fa-star"></i>
                 @endif
-                <img src={{ asset($post->photo) }} alt="" class="mainPhoto" alt="">
+                <img src={{ secure_asset($post->photo) }} alt="" class="mainPhoto" alt="">
                 <div class="cover"
                      style="background: url({{ $post->photo }}) no-repeat;">
                 </div>

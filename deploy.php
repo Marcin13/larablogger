@@ -39,9 +39,9 @@ set('writable_dirs', [    ##dodałem chown
     'storage/framework',
     'storage/framework/cache',
     'storage/framework/sessions',
+    'public'
     'storage/framework/views',
     'storage/logs',
-    'public'
 ]);
 
 host('larablogger.pl')
@@ -53,7 +53,18 @@ host('larablogger.pl')
 // task('artisan:cache:clear', function () {
 //     writeln('Skipping...');
 // });
+//https://stackoverflow.com/questions/50333941/deployer-composer-does-not-work
+
+task('deploy:composer_install', function () {
+    run('cd {{release_path}} && composer install');
+})->desc('running composer install');
+
+/*task('npm:build', function () {
+    run('cd {{release_path}} && npm run production');
+});*/
 
 after('artisan:config:cache', 'artisan:queue:restart');
 before('deploy:symlink', 'artisan:migrate');
+after('deploy:symlink', 'deploy:composer_install');
+//after('deploy:composer_install', 'deploy:npm:build');
 after('deploy:failed', 'deploy:unlock');

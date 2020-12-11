@@ -8,9 +8,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     {{-- <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="none" onload="this.media='all'">
+    {{--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="none" onload="this.media='all'">--}}
      {{-- <link rel="stylesheet" href="/css/main.css"> --}}
-    <!--for social media -->
+    <!--for social media and fonts -->
     <script src="https://use.fontawesome.com/39143ff36e.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     {{--<script src="{{ asset('js/share.js') }}"></script>--}}
