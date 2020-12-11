@@ -35,7 +35,7 @@ class PostController extends Controller
             'type' => 'required|in:text,photo',
             'date' => 'nullable|date',
             'tags' => 'nullable',
-            'image' => 'nullable|max:995|image',
+            'image' => 'nullable|max:6995|image',
             'content' => 'nullable',
             'published' => 'boolean',
             'premium' => 'boolean'

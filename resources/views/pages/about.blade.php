@@ -5,7 +5,7 @@
         <div class="rte">
             <h1>About me</h1>
             <img src="/images/avatar.jpg" width="165" height="165" alt="Marcin M">
-            <p>Hi! My name is Marcin and I'm a programmer 👨 .</p>
+            <p>Hi! My name is Marcin and I'm a programmer 👨 </p>
             <p>
                 Aperiam consequatur beatae nisi adipisci ratione doloremque in.
                 Consectetur accusantium alias voluptates dolorem ipsum non.

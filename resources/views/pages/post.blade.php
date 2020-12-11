@@ -76,7 +76,7 @@
                         @endcan
                     </div>
             </div>
-            @include('partials.post.pagination');
+            @include('partials.post.pagination')
         </article>
     @endif
     <section class="comments">
