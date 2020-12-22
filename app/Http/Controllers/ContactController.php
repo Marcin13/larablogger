@@ -13,12 +13,17 @@ class ContactController extends Controller
     //
     protected function validator($data)
     {
+        $messages = [
+            'g-recaptcha-response.required' => 'You must check the reCAPTCHA.',
+            'g-recaptcha-response.captcha' => 'Captcha error! try again later or contact site admin.',
+        ];
         return Validator::make($data, [
             'email' => ['required', 'string', 'email', 'max:255'],
             'subject' => ['required', 'string', 'max:255'],
             'message' => ['required', 'string', 'max:355'],
             'g-recaptcha-response' => 'required|captcha'
-        ])->validate();
+        ], $messages) //musi tu być do wyświetlania wiadomości
+             ->validate();
     }
 
     public function show()
