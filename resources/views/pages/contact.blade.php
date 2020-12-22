@@ -3,6 +3,7 @@
 
 @section('content')
 <div class="wrapper">
+    {!! NoCaptcha::renderJs() !!}
     <div class="rte">
         <h1>Send Us A Message</h1>
     </div>
@@ -19,6 +20,7 @@
         <div class="form-fieldset is-wide">
             <textarea class="form-textarea{{ $errors->has('message') ? ' is-invalid' : '' }}" name="message" placeholder="Message">{{ old('message') }}</textarea>
         </div>
+        {!! NoCaptcha::display() !!}
         <button class="button">Send</button>
     </form>
 </div>

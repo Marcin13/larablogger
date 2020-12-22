@@ -20,8 +20,8 @@ class SearchController extends Controller
             'q' => ['required', 'min:3', 'max:255'],
             //'q' => ['nullable','min:3', 'max:255'],
         ],
-           $messages // musi tu byc by wyświetlać komunikaty
-        )->validate();
+           $messages) //musi tu być do wyświetlania wiadomości
+             ->validate();
     }
 
     public function index(Request $request)

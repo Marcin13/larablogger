@@ -28,6 +28,10 @@ class PostController extends Controller
 
     protected function validator($data)
     {
+        $messages = [
+            'g-recaptcha-response.required' => 'You must check the reCAPTCHA.',
+            'g-recaptcha-response.captcha' => 'Captcha error! try again later or contact site admin.',
+        ];
         //$id = isset($data['id']) ? ','.$data['id'].',id':'';
         $validated = Validator::make($data, [
             //'title' => 'required|max:255|unique:posts,title',
@@ -39,7 +43,9 @@ class PostController extends Controller
             'content' => 'nullable',
             'published' => 'boolean',
             'premium' => 'boolean'
-        ])->validate();
+        ],
+              $messages) //musi tu być do wyświetlania wiadomości
+             ->validate();
         $validated = Arr::add($validated, 'published', 0);
         $validated = Arr::add($validated, 'premium', 0);
 

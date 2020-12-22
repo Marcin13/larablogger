@@ -17,6 +17,7 @@ class ContactController extends Controller
             'email' => ['required', 'string', 'email', 'max:255'],
             'subject' => ['required', 'string', 'max:255'],
             'message' => ['required', 'string', 'max:355'],
+            'g-recaptcha-response' => 'required|captcha'
         ])->validate();
     }
 
