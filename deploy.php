@@ -45,7 +45,7 @@ set('writable_dirs', [
     'public'
 ]);
 
-host('larablogger.pl')
+host('larablogger.pl') // zostawiamy larablogger.pl ale można zmienić na 46.101.6.230
     ->user(USER)
     ->port(PORT)
     ->set('deploy_path', '/var/www/larablogger.pl/html');
@@ -60,12 +60,12 @@ task('deploy:composer_install', function () {
     run('cd {{release_path}} && composer install');
 })->desc('running composer install');
 
-/*task('npm:build', function () {
+task('npm:build', function () {
     run('cd {{release_path}} && npm run production');
-});*/
+});
 
 after('artisan:config:cache', 'artisan:queue:restart');
 before('deploy:symlink', 'artisan:migrate');
 after('deploy:symlink', 'deploy:composer_install');
-//after('deploy:composer_install', 'deploy:npm:build');
+after('deploy:composer_install', 'deploy:npm:build');
 after('deploy:failed', 'deploy:unlock');

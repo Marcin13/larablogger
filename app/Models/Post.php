@@ -54,7 +54,7 @@ class Post extends Model implements Feedable
     }
     public function getExcerptAttribute()
     {
-        return Str::limit(strip_tags($this->content), 300);
+        return Str::limit(strip_tags($this->content, ''), 300);
     }
     public function getPhotoAttribute()
     {

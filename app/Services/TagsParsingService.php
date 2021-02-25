@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Services;
-
+//Pamiętajmy o dodaniu namespace
 use App\Models\Tag;
-
+//tu też możemy używać model
 class TagsParsingService
 {
     public static function parse($text)

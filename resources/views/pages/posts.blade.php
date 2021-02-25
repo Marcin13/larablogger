@@ -13,11 +13,7 @@
                 <h2 class="postTitle">
                     <a href="{{ route('posts.single',$post->slug) }}">{{ $post->title }}</a>
                 </h2>
-                <div class="rte">{{$post->Excerpt}}
-                    <p class="readMore">
-                        <a href="{{ route('posts.single',$post->slug) }}">Keep reading</a>
-                    </p>
-                </div>
+                    <div class="rte" style="white-space: pre-wrap;">{!! Str::limit(strip_tags($post->content), 100,'<a class="text-muted" href="'.route('posts.single',$post->slug) .'"> Read more...</a>') !!}</div>
             </div>
         </div>
         <div class="meta">
