@@ -43,7 +43,7 @@
         </div>
     </article>
             @elseif($post->type == 'photo')
-    <article class="post formatPhoto">
+    <article class="post formatPhoto wrapper">
         <h2 class="PhotoPostTitle" ><a href="{{ route('posts.single',$post->slug) }}">{{ $post->title }}</a></h2>
         <figure class="postImage">
             @if($post->premium)

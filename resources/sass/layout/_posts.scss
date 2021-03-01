@@ -97,11 +97,12 @@ hr{
     position: relative;
     overflow: hidden;
   // color: #ffffff;
+    margin-top: 10px;
 
     background: #000;
 
     &:first-child {
-        margin-top: -50px;
+       //margin-top: -50px;
     }
 
     .wrapper {
@@ -111,11 +112,11 @@ hr{
     .content .readMore{
         color: #ffffff;
         padding-bottom: 20px;
-    ;
+        margin: 30px 50px;;
     }
 
     figure {
-        width: 1280px;
+        //width: 1280px;
         margin: 0 auto;
         text-align: center;
 

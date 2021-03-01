@@ -39,6 +39,7 @@
             </div>
             @include('partials.post.pagination')
     @elseif($post->type === 'photo')
+                <div class="postContent wrapper">
         <article class="post formatPhoto">
             <h2 class="PhotoPostTitle" >{{ $post->title }}</h2>
             <figure class="postImage">
@@ -77,6 +78,7 @@
                             <p><a href="{{ route('admin.post.edit',$post->id) }}" class="link"><i class="fa fa-edit"></i> Edytuj</a></p>
                         @endcan
                     </div>
+            </div>
             </div>
             @include('partials.post.pagination')
         </article>
