@@ -29,8 +29,8 @@
             @endif
             <div class="flex flex-sb">
            {{--     <p class="date"><i class="fa fa-clock-o"></i> {{$post->date->diffForHumans() }} <i class="fa fa-user"></i> by {{ $post->author->name }} </p> --}}
-                <p class="date"><i class="fa fa-clock-o"></i> {{$post->date->diffForHumans() }} <i class="fa fa-user"></i>
-                    by <a href="{{route('user.profile', $post->author->name)}}">{{ $post->author->name }}</a>
+                <p class="date"><i class="fa fa-clock-o"></i> {{$post->date->diffForHumans() }} by
+                    <a href="{{route('user.profile', $post->author->name)}}"><i class="fa fa-user" title="{{$post->author->name}}"></i></a>
                 </p>
                 {{--Social media buttons--}}
                 @include('partials.social')
@@ -73,9 +73,9 @@
                 </ul>
             @endif
             <div class="flex flex-sb">
-                <p class="date"><i class="fa fa-clock-o"></i> {{$post->date->diffForHumans() }} <i class="fa fa-user"></i>
-                    by  <a href="{{route('user.profile', $post->author->name)}}">{{ $post->author->name }}</a> </p>
-                <p>
+                <p class="date"><i class="fa fa-clock-o"></i> {{$post->date->diffForHumans() }} by
+                    <a href="{{route('user.profile', $post->author->name)}}"><i class="fa fa-user" title="{{$post->author->name}}"></i></a>
+                </p>
                 {{--Social media buttons--}}
                 @include('partials.social')
                 {{--Social media buttons--}}
