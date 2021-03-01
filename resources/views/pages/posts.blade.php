@@ -57,7 +57,7 @@
             <div class="content">{{$post->Excerpt}}</div>
             <div class="readMore">
             <p>
-                        <a href="{{ route('posts.single',$post->slug) }}">Keep reading</a>
+                <div class="rte" style="white-space: pre-wrap;">{!! Str::limit(strip_tags($post->content), 100,'<br /><a class="text-muted" href="'.route('posts.single',$post->slug) .'"> Read more...</a>') !!}</div>
                     </p>
                 </div>
 
