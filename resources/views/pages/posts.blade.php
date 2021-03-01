@@ -39,6 +39,7 @@
                 <p><a href="{{ route('admin.post.edit',$post->id) }}" class="link"><i class="fa fa-edit"></i> Edytuj</a></p>
                 @endcan
             </div>
+            <hr>
         </div>
     </article>
             @elseif($post->type == 'photo')
