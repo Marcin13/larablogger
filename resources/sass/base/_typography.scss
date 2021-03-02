@@ -38,9 +38,10 @@ strike {
 }
 
 pre {
-    margin-top: 20px;
-    margin-bottom: 20px;
+   // margin-top: 20px;
+   // margin-bottom: 20px;
     padding: 20px 10px 20px 40px;
+    overflow: auto;
 
     border-radius: 4px;
     background: #fffde7;
