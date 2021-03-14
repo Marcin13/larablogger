@@ -15,6 +15,15 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     {{--<script src="{{ asset('js/share.js') }}"></script>--}}
     <!--for social media -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9NFX777BWJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-9NFX777BWJ');
+    </script>
     <link rel="stylesheet" href="{{ mix('/css/main.css')}}">
     <title>@yield('title','Home') - {{ config('app.name') }}</title>
 </head>
