@@ -45,7 +45,7 @@
                     <li><a href="{{ route('admin.post.create') }}"{!! request()->routeIs('admin.post.create') ? ' class="is-active"' : '' !!}>Create</a></li>
                     @endcan
                     <li><a href="{{ route('contact') }}">Contact</a></li>
-                    <li><a href="{{route('feeds.main')}}">RSS <i class="fa fa-rss-square"></i></a></li>
+                    <li><a href="{{ route('feeds.main') }}">RSS <i class="fa fa-rss-square"></i></a></li>
                 </ul>
             </nav>
             <form action="{{ route('search') }}" class="search">

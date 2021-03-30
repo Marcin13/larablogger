@@ -1,6 +1,5 @@
 @extends('layouts.master')
 @section('title', 'Edit Post')
-
 @section('content')
     <div class="wrapper">
         <div class="wrapper">
