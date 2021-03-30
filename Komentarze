@@ -12,5 +12,16 @@ Komentarze do projektu Larablogger
 */
 -Zrobiliśmy statyczną stronę
 -oraz Gitignore
-
+-kopjujemy repo do naszego katalogu i go odpalamy za pomoca phpstorm.
+-podlinkujemy do homstead.
+-w pliku Homstead.yaml uszystko uzupelniamy razem z DB name, baza nam sie uyworzy automatycznie.
+-odpalamy vagrant i przechodzimy do Homestead
+-kopjujemy env i uzupelniamy o potrzebne dane.
+- zmieniamy wersje PHP na 7.4 bo default jest 8.0
+-odpalamy composer update
+-odalamy composer instal
+-artisan key:generate
+artisan migrate
+artisan db:seed
+i wszystko smiga.
 
