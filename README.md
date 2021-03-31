@@ -39,6 +39,9 @@ APP_NAME=LaraBlogger
 APP_ENV=local
 APP_URL=http://larablogger.test
 
+# Add this to make storage work #
+FILESYSTEM_DRIVER=public
+
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -48,6 +51,8 @@ DB_PASSWORD=yourpassword
 
 php artisan migrate
 php artisan bd:seed
+
+php artisan storage:link
 
 npm install
 npm run dev
