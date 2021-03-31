@@ -22,7 +22,7 @@ Course is for beginners, but contain very useful code.
 
 ```
 Clone to yur local Pc folder
-git clone https://github.com/Marcin13/larablogger.git'
+git clone https://github.com/Marcin13/larablogger.git
 
 cd larablogger
 
