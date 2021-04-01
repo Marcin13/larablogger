@@ -93,6 +93,7 @@
     </script>
 @endauth
 @yield('footer_scripts')
+<script src="{{ secure_asset('/js/share.js') }}"></script>
 </body>
 </html>
 
