@@ -93,7 +93,9 @@
     </script>
 @endauth
 @yield('footer_scripts')
+<script src="{{ mix('/js/main.js') }}"></script>
 <script src="{{ secure_asset('/js/share.js') }}"></script>
+<script src="{{ secure_asset('/js/lightbox.js') }}"></script>
 </body>
 </html>
 

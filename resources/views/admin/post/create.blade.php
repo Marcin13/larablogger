@@ -65,5 +65,5 @@
 @endsection
 
 @section('footer_scripts')
-    <script src="{{ mix('/js/main.js') }}"></script>
+
 @endsection

@@ -74,7 +74,8 @@ class PostController extends Controller
         $request['id'] = ''; //do edycji posta
         $data = $this->validator($request->all());
         if (isset($data['image'])) {
-            $path = $request->file('image')->store('photos');
+
+            $path = $request->file('image')->storeAs('photos',$request->file('image')->getClientOriginalName());
             $data['image'] = $path;
         }
 
@@ -131,7 +132,7 @@ class PostController extends Controller
         $data = $this->validator($request->all());
 
         if (isset($data['image'])) {
-            $path = $request->file('image')->store('photos');
+            $path = $request->file('image')->storeAs('photos',$request->file('image')->getClientOriginalName());
             $data['image'] = $path;
         }
 
@@ -143,7 +144,8 @@ class PostController extends Controller
         }
 
         if (isset($data['image']) AND isset($oldImage)) {
-            Storage::move($oldImage, "delete/$oldImage");
+
+                     //  Storage::move($oldImage, "delete/$oldImage");
            // Storage::delete($oldImage);
         }
 
@@ -165,7 +167,8 @@ class PostController extends Controller
 
        // Storage::delete($post->image);
         if($post->image) {
-            Storage::move($post->image, "delete/$post->image");
+           //Storage::move($post->image, "delete/$post->image");
+             Storage::delete($post->image);
         }
         return redirect('/')->with('message','Post has been deleted!');
     }

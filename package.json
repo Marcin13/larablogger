@@ -21,10 +21,9 @@
         "sass": "^1.29.0",
         "sass-loader": "^8.0.2",
         "vue-template-compiler": "^2.6.12"
-
     },
     "dependencies": {
+        "lightbox2": "^2.11.3",
         "trumbowyg": "^2.21.0"
-
     }
 }
