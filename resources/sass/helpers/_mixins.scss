@@ -21,7 +21,7 @@
 @mixin selection($color, $bgcolor, $elem: "") {
     #{$elem}::selection {
         color: $color;
-        background-color: $bgcolor;
+        background-color: #6c2626;
     }
 }
 

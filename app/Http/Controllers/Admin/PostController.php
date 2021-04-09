@@ -146,7 +146,7 @@ class PostController extends Controller
         if (isset($data['image']) AND isset($oldImage)) {
 
                      //  Storage::move($oldImage, "delete/$oldImage");
-           // Storage::delete($oldImage);
+            Storage::delete($oldImage);
         }
 
         // return back()->with('message', 'Post has been updated!');

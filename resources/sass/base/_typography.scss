@@ -65,7 +65,10 @@ a {
     p {
         margin-bottom: 20px;
     }
-
+    em {
+        font-style: italic;
+        font-size: medium;
+    }
     img {
 
         width: 780px;
@@ -140,6 +143,7 @@ a {
 
     ol {
         list-style-type: decimal;
+        display: table-row-group;
     }
 }
 
