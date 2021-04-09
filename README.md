@@ -15,14 +15,14 @@ Course is for beginners, but contain very useful code.
 ## In this project I use.
 
 - [laravel](https://laravel.com/docs/routing)
-- [Custom template](www.larablogger.pl)
+- [Custom template](https://www.larablogger.pl)
 - [Mysql](https://www.mysql.com/)
 
 ##  Instalation
 
 ```
 Clone to yur local Pc folder
-git clone https://github.com/Marcin13/larablogger.git'
+git clone https://github.com/Marcin13/larablogger.git
 
 cd larablogger
 
