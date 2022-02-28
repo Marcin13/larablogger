@@ -15,7 +15,7 @@ Course is for beginners, but contain very useful code.
 ## In this project I use.
 
 - [laravel](https://laravel.com/docs/routing)
-- [Custom template](www.larablogger.com)
+- [Custom template](http://larablogger.com)
 - [Mysql](https://www.mysql.com/)
 
 ##  Instalation
