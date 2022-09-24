@@ -50,7 +50,7 @@ DB_USERNAME=yourusername
 DB_PASSWORD=yourpassword
 
 php artisan migrate
-php artisan bd:seed
+php artisan db:seed
 
 php artisan storage:link
 
