@@ -1,9 +1,9 @@
--Instalujemy wersje Laravel 5.8 bo na takiej jest nasz kurs
+- Install Laravel version 5.8 because that's the version used in our course
     laravel new --5.8
     composer create-project laravel/laravel . "5.8.*"
--Composer w katalogu którym sie znajdujemy zainstaluje nam wersje wskazana
--Trzeba nieć na uwadze by w katalogu do którego instalujemy Laravel nic nie było nawet ukrytych plików Git.
-    podwójny shift aby szukać
+- Composer will install the specified version in the current directory
+- Make sure that there are no files, including hidden Git files, in the directory where we install Laravel
+    double shift to search
 -
-Teraz nadpisuje cos w komendy i probuje to cofnac..bo sa bledy
+Now I'm modifying something in the commands and trying to undo it.. because there are errors
 // https://www.tutsmake.com/laravel-8-bootstrap-auth-scaffolding-example/
